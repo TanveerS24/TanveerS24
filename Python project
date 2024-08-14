@@ -1,0 +1,65 @@
+import turtle
+def draw(move,angle,iterate,side="right"):
+    for i in range(iterate):
+        t.forward(move)
+        if(side=="right"):
+            t.right(angle)
+        else:
+            if i==3:
+                t.right(90)
+                break
+            t.left(angle)
+def vertical(move,angle,side="right"):
+    if side=="right":
+        t.right(angle)
+    else:
+        t.left(angle)
+    t.forward(move)
+def circle(move,angle,iterate,side="right"):
+    for i in range(iterate):
+        t.forward(move)
+        if(side=="right"):
+            t.right(angle)
+        else:
+            t.left(angle)
+def circle_pattern():
+    circle(1,1,360)
+    circle(1,1,360,"left")
+    t.left(90)
+    circle(1,1,360)
+    circle(1,1,360,"left")
+def move_to(x,y):
+    t.penup()
+    t.goto(x,y)
+    t.pendown()
+def box(move,angle,iterate):
+    for i in range(4):
+        if(i==0 or i==2):
+            draw(move,angle,iterate)
+        else:
+            draw(move,angle,iterate,"left")
+s=turtle.Screen()
+s.bgcolor("black")
+t=turtle.Turtle()
+t.shape("turtle")
+t.color("purple")
+t.speed(None)
+box(200,90,4)
+move_to(200,200)
+vertical(565,135)
+move_to(200,-200)
+vertical(565,90)
+move_to(0,200)
+vertical(283,90,"left")
+vertical(283,90,"left")
+vertical(283,90,"left")
+vertical(283,90,"left")
+move_to(0,0)
+box(150,90,4)
+t.right(45)
+box(150,90,4)
+box(100,90,4)
+circle_pattern()
+t.right(45)
+circle_pattern()
+turtle.done()
