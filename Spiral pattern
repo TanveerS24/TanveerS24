@@ -1,0 +1,17 @@
+import turtle
+s=turtle.Screen()
+s.bgcolor("black")
+t=turtle.Turtle()
+t.shape("arrow")
+t.color("red")
+t.pencolor("yellow")
+t.speed(10)
+flag=500
+dist=1
+while(flag>0):
+    t.right(1)
+    t.forward(dist)
+    dist+=1
+    flag-=1
+t.hideturtle()
+s.exitonclick()
